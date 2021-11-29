@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
-import checkLogin from '../services/loginValidator';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import { emailValidator, passwordLengthValidator } from '../services/validators';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -11,7 +11,11 @@ const Login = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    setIsDisabled(checkLogin(email, passwordInput));
+    const isEmailValid = emailValidator(email);
+    const isPasswordValid = passwordLengthValidator(passwordInput);
+    if(isEmailValid && isPasswordValid) {
+      setIsDisabled(false);
+    }
   }, [email, passwordInput]);
 
   if (redirect) return <Navigate to="/main" />;

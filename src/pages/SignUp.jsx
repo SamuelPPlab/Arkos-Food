@@ -3,8 +3,8 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
-import { validateUserName } from "../services/signUpValidator";
-import { emailValidator } from "../services/loginValidator";
+import { emailValidator, validateUserName } from "../services/validators";
+
 
 const SignUp = () => {
 
@@ -18,6 +18,7 @@ const SignUp = () => {
   useEffect(() => {
     const isUsernameValid = validateUserName(fullName);
     const isEmailValid = emailValidator(email);
+    const isPasswordValid = emailValidator(passwordInput);
   }, [fullName]);
 
   const nameProps = {
