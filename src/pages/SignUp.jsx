@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
 import { validateUserName } from "../services/signUpValidator";
+import { emailValidator } from "../services/loginValidator";
 
 const SignUp = () => {
 
@@ -15,8 +16,8 @@ const SignUp = () => {
   const [allowSignUp, setAllowSignUp] = useState(false);
 
   useEffect(() => {
-    setAllowSignUp(validateUserName(fullName));
-    console.log(allowSignUp)
+    const isUsernameValid = validateUserName(fullName);
+    const isEmailValid = emailValidator(email);
   }, [fullName]);
 
   const nameProps = {
