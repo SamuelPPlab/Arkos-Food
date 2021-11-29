@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
+import { validateUserName } from "../services/signUpValidator";
 
 const SignUp = () => {
 
@@ -11,6 +12,12 @@ const SignUp = () => {
   const [passwordInput, setPasswordInput] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [goToMain, setGoToMain] = useState(false);
+  const [allowSignUp, setAllowSignUp] = useState(false);
+
+  useEffect(() => {
+    setAllowSignUp(validateUserName(fullName));
+    console.log(allowSignUp)
+  }, [fullName]);
 
   const nameProps = {
     id: 'nomeCompleto',
@@ -47,7 +54,7 @@ const SignUp = () => {
     id: "Cadastrar",
     name: "Cadastrar",
     onClick: () => setGoToMain(true),
-    disable: false,
+    disabled: allowSignUp,
   };
 
   const alreadySingnedUp = <div>
@@ -59,6 +66,7 @@ const SignUp = () => {
   return (
     <div>
       <Input {...nameProps} />
+      {(allowSignUp && fullName !== '') && <div>O nome deve conter apenas letras!</div>}
       <Input {...emailProps} />
       <Input {...passwordInputProps} />
       <Input {...confirmPasswordProps} />
