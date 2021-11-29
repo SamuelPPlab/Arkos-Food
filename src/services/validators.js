@@ -10,3 +10,7 @@ export const passwordLengthValidator = (password) => {
   const minPasswordLength = 8;
   return password >= minPasswordLength;
 };
+
+export const passwordMatcher = (password, confirmPassword) => {
+  return password === confirmPassword;
+};

@@ -3,7 +3,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
-import { emailValidator, validateUserName } from "../services/validators";
+import { emailValidator, passwordMatcher, validateUserName } from "../services/validators";
 
 
 const SignUp = () => {
@@ -19,6 +19,9 @@ const SignUp = () => {
     const isUsernameValid = validateUserName(fullName);
     const isEmailValid = emailValidator(email);
     const isPasswordValid = emailValidator(passwordInput);
+    const doPasswordsMatch = passwordMatcher(passwordInput, confirmPassword);
+
+    
   }, [fullName]);
 
   const nameProps = {
