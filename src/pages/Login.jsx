@@ -40,9 +40,8 @@ const Login = () => {
   };
 
   const noAccount = <div>
-    Ainda não tem uma conta?
-    <Link to="/signup"> Clique aqui</Link>
-  </div>
+    Ainda não tem uma conta? <Link to="/signup">Clique aqui!</Link>
+  </div>;
 
   return (
     <div>
