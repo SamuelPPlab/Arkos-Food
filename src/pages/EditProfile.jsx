@@ -10,6 +10,7 @@ const EditProfile = () => {
   const [currentEmail, setCurrentEmail] = useState('');
   const [newEmail, setNewEmail] = useState('');
   const [disableEditDetails, setDisableEditDetails] = useState(true);
+  const [goBackToMain, setGoBackToMain] = useState(false);
 
   useEffect(() => {
     const isUsernameValid = validateUserName(fullName);
@@ -47,10 +48,12 @@ const EditProfile = () => {
     id: "editDetails",
     name: "Alterar Dados",
     onClick: () => {
-      return <Navigate to="/" />;
+      setGoBackToMain(true);
     },
     disabled: disableEditDetails,
   };
+
+  if(goBackToMain) return <Navigate to="/main" />;
 
   const nameWarning = <div>O nome deve conter apenas letras!</div>;
   const emailWarning = <div>O email deve ter o formato correto.</div>;
