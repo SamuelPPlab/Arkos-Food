@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import checkLogin from '../services/loginValidator';
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -39,11 +39,19 @@ const Login = () => {
     disabled:  isDisabled,
   };
 
+  const noAccount = <div>
+    Ainda não tem uma conta?
+    <Link to="/signup"> Clique aqui</Link>
+  </div>
+
   return (
     <div>
       <Input {...nameInputProps} />
       <Input {...passwordInputProps} />
-      <Button {...loginButtonProps} />
+      <div>
+        <Button {...loginButtonProps} />
+      </div>
+      {noAccount}
     </div>
   );
 };
