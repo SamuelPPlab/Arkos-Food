@@ -62,13 +62,16 @@ const Login = () => {
         {shoppingCartIMG}
       </div>
       <div style={{ width: '50%', textAlign: 'center', height: '100%' }}>
-        <p>Seja Bem-Vindo!</p>
-        <Input {...nameInputProps} />
-        <Input {...passwordInputProps} />
-        <div>
-          <Button {...loginButtonProps} />
+        <div style={{ width: '558px', height: '642px', marginTop: '15%', marginLeft: '25%', boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1)',
+borderRadius: '20px' }}>
+          <p>Seja Bem-Vindo!</p>
+          <Input {...nameInputProps} />
+          <Input {...passwordInputProps} />
+          <div>
+            <Button {...loginButtonProps} />
+          </div>
+          {noAccount}
         </div>
-        {noAccount}
       </div>
     </div>
   );
