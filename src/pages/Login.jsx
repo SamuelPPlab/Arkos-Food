@@ -56,23 +56,22 @@ const Login = () => {
   const noAccount = <div>
     Ainda não tem uma conta? <Link to="/signup">Clique aqui!</Link>
   </div>;
-
   return (
-    <div style={{ display: 'flex', maxHeight: '100%' }}>
-      <div style={{ width: '50%' }}>
+    <div style={{display: 'flex'}}>
+      <div>
         {backgroundRectangleIMG}
         {fullArkosLogo}
         {shoppingCartIMG}
       </div>
-      <div style={{ width: '50%', textAlign: 'center' }}>
-      Seja Bem-Vindo!
-      <Input {...nameInputProps} />
-      <Input {...passwordInputProps} />
-      <div>
-        <Button {...loginButtonProps} />
+      <div style={{ width: '558px', height: '642px', top: '191px', marginLeft: '802px', borderRadius: '20px', border: 'black' }}>
+        Seja Bem-Vindo!
+        <Input {...nameInputProps} />
+        <Input {...passwordInputProps} />
+        <div>
+          <Button {...loginButtonProps} />
+        </div>
+        {noAccount}
       </div>
-      {noAccount}
-    </div>
     </div>
   );
 };
