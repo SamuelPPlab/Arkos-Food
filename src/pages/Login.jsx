@@ -39,6 +39,28 @@ const Login = () => {
     paddingBottom: '50px'
   };
 
+  const loginButtonStyle = {
+    left: '0%',
+    right: '0%',
+    top: '0%',
+    bottom: '0%',
+    padding: '20px',
+    marginTop: '40px',
+    paddingLeft: '110px',
+    paddingRight: '110px',
+    background: '#3655C7',
+    borderRadius: '20px',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '21px',
+    lineHeight: '120%',
+    alignItems: 'center',
+    textAlign: 'center',
+    letterSpacing: '0.007em',
+    color: '#EDEFF2',
+  };
+
   const nameInputProps = {
     id: "email",
     name: "Email",
@@ -64,6 +86,7 @@ const Login = () => {
     id: "submitLogin",
     onClick: () => setRedirect(true),
     disabled:  isDisabled,
+    style: loginButtonStyle,
   };
 
   const loginFormContainer = {
