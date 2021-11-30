@@ -75,8 +75,11 @@ const SignUp = () => {
       <Input {...nameProps} />
       {(!validateUserName(fullName) && fullName !== '') && <div>O nome deve conter apenas letras!</div>}
       <Input {...emailProps} />
+      {(!emailValidator(email) && email !== '') && <div>O email deve ter o formato correto.</div>}
       <Input {...passwordInputProps} />
+      {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && <div>A senha deve ter pelo menos oito caracteres.</div>}
       <Input {...confirmPasswordProps} />
+      {!passwordMatcher(passwordInput, confirmPassword) && <div>As senhas devem ser iguais.</div>}
       {alreadySingnedUp}
       <Button {...signUpButtonProps} />
     </div>
