@@ -5,7 +5,7 @@ import Login from './pages/Login';
 function App() {
   return (
     <Routes>
-      <Route exact path="/" component={ Login } />
+      <Route path="/" element={<Login/>} />
     </Routes>
   );
 }
