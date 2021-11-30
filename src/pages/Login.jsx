@@ -109,13 +109,27 @@ const Login = () => {
     color: '#1C2025'
   };
 
+  const noAccountStyle = {
+    width: '150px',
+    height: '18px',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '12px',
+    lineHeight: '150%',
+    letterSpacing: '0.007em',
+    marginLeft: '200px',
+    marginTop: '10px',
+    color: '#1C2025',
+  };
+
   const arkosFoodIMG = <img src={ArkosFood} alt="Arkos logo" />;
   const forkAnkdKnifeIMG = <img src={ForkAndKnife} alt="Fork And Knife" />;
   const fullArkosLogo = <div style={{ marginTop: '16px', marginLeft: '80px' }}>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
   const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '120px' }} />; 
 
-  const noAccount = <div>
-    Ainda não tem uma conta? <Link to="/signup">Clique aqui!</Link>
+  const noAccount = <div style={noAccountStyle}>
+    Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link>
   </div>;
 
   return (
