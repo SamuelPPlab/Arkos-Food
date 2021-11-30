@@ -48,8 +48,8 @@ const Login = () => {
 
   const arkosFoodIMG = <img src={ArkosFood} alt="Arkos logo" />;
   const forkAnkdKnifeIMG = <img src={ForkAndKnife} alt="Fork And Knife" />;
-  const fullArkosLogo = <div>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
-  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" />; 
+  const fullArkosLogo = <div style={{ marginTop: '16px', marginLeft: '80px' }}>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
+  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '120px' }} />; 
 
   const noAccount = <div>
     Ainda não tem uma conta? <Link to="/signup">Clique aqui!</Link>
@@ -62,7 +62,7 @@ const Login = () => {
         {shoppingCartIMG}
       </div>
       <div style={{ width: '50%', textAlign: 'center', height: '100%' }}>
-        Seja Bem-Vindo!
+        <p>Seja Bem-Vindo!</p>
         <Input {...nameInputProps} />
         <Input {...passwordInputProps} />
         <div>
