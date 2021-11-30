@@ -6,6 +6,7 @@ import { emailValidator, passwordLengthValidator } from '../services/validators'
 import ArkosFood from '../images/ArkosFood.png';
 import ForkAndKnife from '../images/ForkAndKnife.png';
 import ShoppingCart from '../images/ShoppingCart.png';
+import './inputBox.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -34,6 +35,8 @@ const Login = () => {
     letterSpacing: '0.007em',
     color: '#1C2025',
     paddingTop: '30px',
+    paddingLeft: '25px',
+    paddingBottom: '50px'
   };
 
   const nameInputProps = {
@@ -43,6 +46,7 @@ const Login = () => {
     setFieldValue: setEmail,
     type: "email",
     style: inputBoxTextStyle,
+    className: 'inputBox',
   };
 
   const passwordInputProps = {
@@ -52,6 +56,7 @@ const Login = () => {
     setFieldValue: setPasswordInput,
     type: "password",
     style: inputBoxTextStyle,
+    className: 'inputBox',
   };
 
   const loginButtonProps = {
