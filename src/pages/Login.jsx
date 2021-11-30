@@ -3,6 +3,10 @@ import { Navigate, Link } from 'react-router-dom';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { emailValidator, passwordLengthValidator } from '../services/validators';
+import ArkosFood from '../images/ArkosFood.png';
+import ForkAndKnife from '../images/ForkAndKnife.png';
+import LeftLoginRectangle from '../images/LeftLoginRectangle.png';
+import ShoppingCart from '../images/ShoppingCart.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -43,14 +47,24 @@ const Login = () => {
     disabled:  isDisabled,
   };
 
+  const arkosFoodIMG = <img src={ArkosFood} alt="Arkos logo" />;
+  const forkAnkdKnifeIMG = <img src={ForkAndKnife} alt="Fork And Knife" style={{ position: 'relative' }} />;
+  const fullArkosLogo = <div style={{ position: 'relative' }}>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
+  const backgroundRectangleIMG = <img src={LeftLoginRectangle} alt="background" style={{ position: 'absolute' }} />;
+  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ position: 'relative' }} />; 
+
   const noAccount = <div>
     Ainda não tem uma conta? <Link to="/signup">Clique aqui!</Link>
   </div>;
 
   return (
-    <div>
-      <div></div>
-      <div>
+    <div style={{ display: 'flex', maxHeight: '100%' }}>
+      <div style={{ width: '50%' }}>
+        {backgroundRectangleIMG}
+        {fullArkosLogo}
+        {shoppingCartIMG}
+      </div>
+      <div style={{ width: '50%', textAlign: 'center' }}>
       Seja Bem-Vindo!
       <Input {...nameInputProps} />
       <Input {...passwordInputProps} />
