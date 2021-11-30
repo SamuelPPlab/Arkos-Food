@@ -68,18 +68,23 @@ const SignUp = () => {
     Já possui um cadastro? <Link to="/">Login</Link>
   </div>;
 
+  const nameWarning = <div>O nome deve conter apenas letras!</div>;
+  const emailWarning = <div>O email deve ter o formato correto.</div>;
+  const passwordLengthWarning = <div>A senha deve ter pelo menos oito caracteres.</div>;
+  const differentPasswordsWarning = <div>As senhas devem ser iguais.</div>;
+
   if(goToMain) return <Navigate to="/main" />;
 
   return (
     <div>
       <Input {...nameProps} />
-      {(!validateUserName(fullName) && fullName !== '') && <div>O nome deve conter apenas letras!</div>}
+      {(!validateUserName(fullName) && fullName !== '') && nameWarning}
       <Input {...emailProps} />
-      {(!emailValidator(email) && email !== '') && <div>O email deve ter o formato correto.</div>}
+      {(!emailValidator(email) && email !== '') && emailWarning}
       <Input {...passwordInputProps} />
-      {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && <div>A senha deve ter pelo menos oito caracteres.</div>}
+      {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && passwordLengthWarning}
       <Input {...confirmPasswordProps} />
-      {!passwordMatcher(passwordInput, confirmPassword) && <div>As senhas devem ser iguais.</div>}
+      {!passwordMatcher(passwordInput, confirmPassword) && differentPasswordsWarning}
       {alreadySingnedUp}
       <Button {...signUpButtonProps} />
     </div>
