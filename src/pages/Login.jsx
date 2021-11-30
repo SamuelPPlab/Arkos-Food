@@ -49,9 +49,9 @@ const Login = () => {
 
   const arkosFoodIMG = <img src={ArkosFood} alt="Arkos logo" />;
   const forkAnkdKnifeIMG = <img src={ForkAndKnife} alt="Fork And Knife" style={{ position: 'relative' }} />;
-  const fullArkosLogo = <div style={{ position: 'relative' }}>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
+  const fullArkosLogo = <div style={{ position: 'relative', marginTop: '16px', marginLeft: '80px' }}>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
   const backgroundRectangleIMG = <img src={LeftLoginRectangle} alt="background" style={{ position: 'absolute' }} />;
-  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ position: 'relative' }} />; 
+  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ position: 'relative', marginTop: '284px', marginLeft: '84px' }} />; 
 
   const noAccount = <div>
     Ainda não tem uma conta? <Link to="/signup">Clique aqui!</Link>
