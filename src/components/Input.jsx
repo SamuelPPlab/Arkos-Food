@@ -13,8 +13,8 @@ const Input = ({ name, fieldValue = null, id, className = null,
   };
 
   return (
-    <div>
-      <label htmlFor={id} style={style}>
+    <div style={style}>
+      <label htmlFor={id}>
         {name}
         <div>
           <input {...inputProps} />

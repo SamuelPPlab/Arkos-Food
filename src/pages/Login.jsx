@@ -23,12 +23,26 @@ const Login = () => {
 
   if (redirect) return <Navigate to="/main" />;
 
+  const inputBoxTextStyle = {
+    width: '51px',
+    height: '27px',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '18px',
+    lineHeight: '150%',
+    letterSpacing: '0.007em',
+    color: '#1C2025',
+    paddingTop: '30px',
+  };
+
   const nameInputProps = {
     id: "email",
     name: "Email",
     fieldValue: email,
     setFieldValue: setEmail,
     type: "email",
+    style: inputBoxTextStyle,
   };
 
   const passwordInputProps = {
@@ -37,6 +51,7 @@ const Login = () => {
     fieldValue: passwordInput,
     setFieldValue: setPasswordInput,
     type: "password",
+    style: inputBoxTextStyle,
   };
 
   const loginButtonProps = {
@@ -44,6 +59,26 @@ const Login = () => {
     id: "submitLogin",
     onClick: () => setRedirect(true),
     disabled:  isDisabled,
+  };
+
+  const loginFormContainer = {
+    width: '558px',
+    height: '642px',
+    marginTop: '15%',
+    marginLeft: '25%',
+    boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1)',
+    borderRadius: '20px',
+  };
+
+  const welcomeStyle = {
+    paddingTop: '20%',
+    font: 'Roboto',
+    fontWeight: '500',
+    style: 'normal',
+    fontSize: '36px',
+    lineHeight: '120%',
+    letterSpacing: '0.007em',
+    color: '#1C2025'
   };
 
   const arkosFoodIMG = <img src={ArkosFood} alt="Arkos logo" />;
@@ -62,14 +97,11 @@ const Login = () => {
         {shoppingCartIMG}
       </div>
       <div style={{ width: '50%', textAlign: 'center', height: '100%' }}>
-        <div style={{ width: '558px', height: '642px', marginTop: '15%', marginLeft: '25%', boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1)',
-borderRadius: '20px' }}>
-          <p>Seja Bem-Vindo!</p>
+        <div style={loginFormContainer}>
+          <h1 style={welcomeStyle}>Seja bem-vindo!</h1>
           <Input {...nameInputProps} />
           <Input {...passwordInputProps} />
-          <div>
-            <Button {...loginButtonProps} />
-          </div>
+          <Button {...loginButtonProps} />
           {noAccount}
         </div>
       </div>
