@@ -3,7 +3,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
-import { emailValidator, passwordMatcher, validateUserName } from "../services/validators";
+import { emailValidator, passwordLengthValidator, passwordMatcher, validateUserName } from "../services/validators";
 
 
 const SignUp = () => {
@@ -13,16 +13,18 @@ const SignUp = () => {
   const [passwordInput, setPasswordInput] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [goToMain, setGoToMain] = useState(false);
-  const [allowSignUp, setAllowSignUp] = useState(false);
+  const [disableSignUp, setDisableSignUp] = useState(true);
 
   useEffect(() => {
     const isUsernameValid = validateUserName(fullName);
     const isEmailValid = emailValidator(email);
-    const isPasswordValid = emailValidator(passwordInput);
+    const isPasswordValid = passwordLengthValidator(passwordInput);
     const doPasswordsMatch = passwordMatcher(passwordInput, confirmPassword);
-
-    
-  }, [fullName]);
+    if(isEmailValid && isUsernameValid && isPasswordValid && doPasswordsMatch) {
+      return setDisableSignUp(false);
+    }
+    setDisableSignUp(true);
+  }, [fullName, email, passwordInput, confirmPassword]);
 
   const nameProps = {
     id: 'nomeCompleto',
@@ -59,7 +61,7 @@ const SignUp = () => {
     id: "Cadastrar",
     name: "Cadastrar",
     onClick: () => setGoToMain(true),
-    disabled: allowSignUp,
+    disabled: disableSignUp,
   };
 
   const alreadySingnedUp = <div>
@@ -71,7 +73,7 @@ const SignUp = () => {
   return (
     <div>
       <Input {...nameProps} />
-      {(allowSignUp && fullName !== '') && <div>O nome deve conter apenas letras!</div>}
+      {(!validateUserName(fullName) && fullName !== '') && <div>O nome deve conter apenas letras!</div>}
       <Input {...emailProps} />
       <Input {...passwordInputProps} />
       <Input {...confirmPasswordProps} />
