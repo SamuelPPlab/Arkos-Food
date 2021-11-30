@@ -49,12 +49,16 @@ const Login = () => {
 
   return (
     <div>
+      <div></div>
+      <div>
+      Seja Bem-Vindo!
       <Input {...nameInputProps} />
       <Input {...passwordInputProps} />
       <div>
         <Button {...loginButtonProps} />
       </div>
       {noAccount}
+    </div>
     </div>
   );
 };
