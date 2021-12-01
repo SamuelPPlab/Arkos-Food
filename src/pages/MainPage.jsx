@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
+import ProductCard from "../components/ProductCard";
 import { fetchMainData } from "../redux/actions/mainPageActions";
 
 
-const MainPage = ({ stock }) => {
+const MainPage = ({ stock, loading }) => {
   const dispatch = useDispatch();
-  console.log(stock)
   useEffect(() => {
     dispatch(fetchMainData());
-  }, [])
+  }, []);
+  if(loading) return <div>loading</div>
   return(
-    <div>
-
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      {stock.map((item) => (<ProductCard item={item} />))}
     </div>
   );
 };
