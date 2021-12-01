@@ -1,4 +1,6 @@
-export const fetchStock = () => {
-  const url = 'https://fakestoreapi.com/products?limit=8';
+export const fetchStock = (limit) => {
+  const url = limit
+    ? `https://fakestoreapi.com/products?limit=${limit}`
+    : `https://fakestoreapi.com/products`;
   return fetch(url).then((r) => r.json());
 };
