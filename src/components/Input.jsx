@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ name, fieldValue = null, id, className = null,
+const Input = ({ name, fieldValue = null, id, className = null, placeholder = '',
   setFieldValue = null, type = 'text', readOnly = false, style = null }) => {
   const inputProps = {
     value: fieldValue,
@@ -10,6 +10,7 @@ const Input = ({ name, fieldValue = null, id, className = null,
     type: type,
     readOnly: readOnly,
     className,
+    placeholder,
   };
 
   return (

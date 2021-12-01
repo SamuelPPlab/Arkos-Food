@@ -1,0 +1,21 @@
+.searchInputBox {
+  background: #FFFFFF;
+  border: 2px solid #E0E5F2;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 958px;
+  height: 56px;
+  margin-top: 80px;
+  margin-left: 80px;
+}
+
+.clearPlaceholderText::placeholder {
+  font-family: Roboto;
+  padding-left: 15px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.007em;
+  color: #D1D2D6;
+};

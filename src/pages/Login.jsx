@@ -3,8 +3,7 @@ import { Navigate, Link } from 'react-router-dom';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import { emailValidator, passwordLengthValidator } from '../services/validators';
-import ArkosFood from '../images/ArkosFood.png';
-import ForkAndKnife from '../images/ForkAndKnife.png';
+import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import ShoppingCart from '../images/ShoppingCart.png';
 import './inputBox.css';
 
@@ -123,10 +122,8 @@ const Login = () => {
     color: '#1C2025',
   };
 
-  const arkosFoodIMG = <img src={ArkosFood} alt="Arkos logo" />;
-  const forkAnkdKnifeIMG = <img src={ForkAndKnife} alt="Fork And Knife" />;
-  const fullArkosLogo = <div style={{ marginTop: '16px', marginLeft: '80px' }}>{forkAnkdKnifeIMG}{arkosFoodIMG}</div>;
-  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '120px' }} />; 
+  const fullArkosLogo = <img src={ArkosFoodLogo} style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }} />;
+  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '200px' }} />; 
 
   const noAccount = <div style={noAccountStyle}>
     Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link>
