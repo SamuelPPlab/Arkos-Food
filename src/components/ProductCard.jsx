@@ -1,7 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import MiniShoppingCart from '../images/MiniShoppingCart.png';
+import { addItemToCart } from "../redux/actions/checkoutActions";
+import Button from "./Button";
 
 const ProductCard = ({ item }) => {
-  const { title, description, image, price, rating: { rate } } = item;
+
+  const dispatch = useDispatch();
+
+  const { title, description, image, price, id, rating: { rate } } = item;
+  const miniCartIMG = <img src={MiniShoppingCart} alt="Shopping cart" />;
+  const priceText = <div>{miniCartIMG} {price}</div>
+
+  const priceButtonProps = {
+    name: priceText,
+    onClick: () => dispatch(addItemToCart(id)),
+    id: 'addToCartButton',
+  };
+
   return (
     <div style={{
       width: '300px',
@@ -17,7 +33,7 @@ const ProductCard = ({ item }) => {
       <h1>{title}</h1>
       <p>{rate}</p>
       <p>{description}</p>
-      <p>{price}</p>
+      <Button {...priceButtonProps} />
     </div>
   );
 };
