@@ -10,7 +10,7 @@ const Input = ({ name, fieldValue = null, id, className = null, placeholder = ''
     type: type,
     readOnly: readOnly,
     className,
-    placeholder
+    placeholder,
   };
 
   return (
