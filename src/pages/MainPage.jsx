@@ -1,7 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 
 
-const MainPage = () => {
+const MainPage = ({ stock }) => {
+  console.log(stock)
   return(
     <div>
 
@@ -9,4 +11,10 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+const mapStateToProps = ({ mainPageReducer: { stock, loading, error } }) => ({
+  stock,
+  loading,
+  error,
+});
+
+export default connect(mapStateToProps)(MainPage);
