@@ -37,7 +37,8 @@ const MainPage = ({ stock, loading }) => {
       <div>
         <SearchBar />
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <h1 style={{ paddingLeft: '80px', paddingTop: '50px', paddingBottom: '30px' }}>Produtos</h1>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '1400px', marginLeft: '80px' }}>
         {stock.map((item) => (<ProductCard item={item} key={Math.random()} />))}
       </div>
     </div>
