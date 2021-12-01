@@ -3,7 +3,8 @@ import React from "react";
 const ProductCard = ({ item }) => {
   const { title, description, image, price, rating: { rate } } = item;
   return (
-    <div style={{ width: '300px',
+    <div style={{
+      width: '300px',
       width: '298px',
       left: '0px',
       top: '0px',
