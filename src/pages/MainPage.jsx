@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import ProductCard from "../components/ProductCard";
+import SearchBar from "../components/SearchBar";
 import { fetchAllProducts, fetchMainData } from "../redux/actions/mainPageActions";
 
 
@@ -13,8 +14,11 @@ const MainPage = ({ stock, loading }) => {
   }, []);
   if(loading) return <div>loading</div>
   return(
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-      {stock.map((item) => (<ProductCard item={item} key={Math.random()} />))}
+    <div>
+      <SearchBar />
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {stock.map((item) => (<ProductCard item={item} key={Math.random()} />))}
+      </div>
     </div>
   );
 };
