@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
@@ -27,7 +28,9 @@ const MainPage = ({ stock, loading }) => {
         </div>
         <div style={{ display: 'flex', paddingTop: '30px', paddingRight: '10px' }}>
           <div style={{ paddingRight: '10px' }}>
-            <img src={SmallShoppingCart} alt="Small Shopping Cart" style={{ paddingRight: '1%', width: '31px', height: '31px' }} />
+            <Link to="/checkout" style={{ paddingRight: '1%', width: '31px', height: '31px' }}>
+              <img src={SmallShoppingCart} alt="Small Shopping Cart" />
+            </Link>
           </div>
           <div style={{ width: '500px', paddingTop: '10px' }}>
             Olá, Irineu da silva costa!
