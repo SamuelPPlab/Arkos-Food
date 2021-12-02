@@ -24,6 +24,12 @@ const Header = ({ location, quantity }) => {
         </div>
         <div style={{ width: '500px', paddingTop: '35px', display: 'flex' }}>
           Olá <div onClick={() => setShowMenu(!showMenu)}>, Irineu da silva costa!</div>
+          {
+          showMenu && <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <Link to="/edit-profile"><img src={PersonIcon} alt="Edit Profile" /> Editar Perfil</Link>
+            <Link to="/" ><img src={ExitIcon} alt="Exit" />SAIR</Link>
+          </div>
+        }
         </div>
       </div>
     </div>
