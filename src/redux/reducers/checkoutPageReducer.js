@@ -15,7 +15,9 @@ const checkoutPageReducer = (state = INITIAL_STATE, action) => {
     case ADD_PRODUCTS:
       return { ...state, products };
     case REMOVE_ITEM:
-      return { ...state, products: state.products.filter(({ key }) => key !== action.key) };
+      const currentItemList = items;
+      currentItemList.splice(currentItemList.indexOf(id), 1);
+      return { ...state, products: state.products.filter(({ key }) => key !== action.key), items: currentItemList };
     case CLEAR_SHOPPING_CART:
       return { ...INITIAL_STATE };
     default:
