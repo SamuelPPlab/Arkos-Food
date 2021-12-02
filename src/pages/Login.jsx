@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import { emailValidator, passwordLengthValidator } from '../services/validators';
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import ShoppingCart from '../images/ShoppingCart.png';
-import './inputBox.css';
+import '../CSS/loginPage.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -38,28 +38,6 @@ const Login = () => {
     paddingBottom: '50px'
   };
 
-  const loginButtonStyle = {
-    left: '0%',
-    right: '0%',
-    top: '0%',
-    bottom: '0%',
-    padding: '20px',
-    marginTop: '40px',
-    paddingLeft: '110px',
-    paddingRight: '110px',
-    background: '#3655C7',
-    borderRadius: '20px',
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: '21px',
-    lineHeight: '120%',
-    alignItems: 'center',
-    textAlign: 'center',
-    letterSpacing: '0.007em',
-    color: '#EDEFF2',
-  };
-
   const nameInputProps = {
     id: "email",
     name: "Email",
@@ -85,16 +63,7 @@ const Login = () => {
     id: "submitLogin",
     onClick: () => setRedirect(true),
     disabled:  isDisabled,
-    style: loginButtonStyle,
-  };
-
-  const loginFormContainer = {
-    width: '558px',
-    height: '642px',
-    marginTop: '15%',
-    marginLeft: '25%',
-    boxShadow: '2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1)',
-    borderRadius: '20px',
+    className: isDisabled ? 'submitLoginDisabled' : 'submitLoginEnabled',
   };
 
   const welcomeStyle = {
@@ -136,7 +105,7 @@ const Login = () => {
         {shoppingCartIMG}
       </div>
       <div style={{ width: '50%', textAlign: 'center', height: '100%' }}>
-        <div style={loginFormContainer}>
+        <div id="loginFormContainer">
           <h1 style={welcomeStyle}>Seja bem-vindo!</h1>
           <Input {...nameInputProps} />
           <Input {...passwordInputProps} />

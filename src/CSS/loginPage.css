@@ -1,0 +1,52 @@
+#loginFormContainer {
+  width: 558px;
+  height: 642px;
+  margin-top: 15%;
+  margin-left: 25%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.inputBox {
+  width: 506px;
+  height: 74px;
+  border: 2px solid #D4D9E6;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.submitLoginEnabled {
+  padding: 20px;
+  margin-top: 40px;
+  padding-left: 110px;
+  padding-right: 110px;
+  background: #3655C7;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.007em;
+  color: #EDEFF2;
+}
+
+.submitLoginDisabled {
+  padding: 20px;
+  margin-top: 40px;
+  padding-left: 110px;
+  padding-right: 110px;
+  background: #5ba4cf;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.007em;
+  color: #EDEFF2;
+}
