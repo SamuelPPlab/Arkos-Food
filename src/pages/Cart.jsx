@@ -10,7 +10,6 @@ const Cart = ({ items, products }) => {
   useEffect(() => {
     dispatch(fetchAllCartItems(items))
   }, []);
-  console.log(products)
 
   const total = products.reduce((a, { price }) => (a + price), 0).toFixed(2);
 
