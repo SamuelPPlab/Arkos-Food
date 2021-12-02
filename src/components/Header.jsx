@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import SmallShoppingCart from '../images/SmallShoppingCart.png';
+import ExitIcon from '../images/ExitIcon.png';
+import PersonIcon from '../images/PersonIcon.png';
 
 const Header = ({ location, quantity }) => {
-
+  const [showMenu, setShowMenu] = useState(false);
+  console.log(showMenu)
   return(
     <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
       <div>
@@ -19,8 +22,8 @@ const Header = ({ location, quantity }) => {
             <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '20px' } : { color: 'black' }} alt="Small Shopping Cart" />
           </Link>
         </div>
-        <div style={{ width: '500px', paddingTop: '35px' }}>
-          Olá, Irineu da silva costa!
+        <div style={{ width: '500px', paddingTop: '35px', display: 'flex' }}>
+          Olá <div onClick={() => setShowMenu(!showMenu)}>, Irineu da silva costa!</div>
         </div>
       </div>
     </div>
