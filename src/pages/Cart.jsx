@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import CartCard from "../components/CartCard";
-import { fetchAllCartItems } from "../redux/actions/checkoutActions";
+import { clearShoppingCart, fetchAllCartItems } from "../redux/actions/checkoutActions";
 
 const Cart = ({ items, products }) => {
   const dispatch = useDispatch();
@@ -17,8 +18,8 @@ const Cart = ({ items, products }) => {
   const buyButtonProps = {
     name: 'Comprar',
     id: 'BuyButton',
-    onClick: () => null,
-  }
+    onClick: () => dispatch(clearShoppingCart()),
+  };
 
   return(
     <div>
@@ -30,7 +31,9 @@ const Cart = ({ items, products }) => {
       <div>
         Total: R$: {total}
       </div>
-      <Button />
+      <Link to="/main">
+        <Button {...buyButtonProps} />
+      </Link>
     </div>
   );
 };
