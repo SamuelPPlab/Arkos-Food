@@ -26,8 +26,10 @@ const CartCard = ({ item }) => {
       <div>
         <RatingStars rating={rating} />
       </div>
-      {/* {description} */}
-      {price}
+      {description}
+      <div>
+        R$ {price}
+      </div>
     </div>
   );
 };

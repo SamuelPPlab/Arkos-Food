@@ -3,9 +3,6 @@ import GrayStar from '../images/GrayStar.png';
 import YellowStar from '../images/YellowStar.png';
 
 const RatingStars = ({ rating: { count, rate } }) => {
-  const yellowStarIMG = <img src={YellowStar} alt="Yellow star" />;
-  const grayStarIMG = <img src={GrayStar} alt="Gray Star" />;
-
   const maxRating = 5;
   const yellowStarCount = Math.ceil(rate);
   const grayStarCount = maxRating - yellowStarCount;
@@ -15,8 +12,13 @@ const RatingStars = ({ rating: { count, rate } }) => {
 
   return(
     <div>
-      {yellowStarArray.map(() => yellowStarIMG)}
-      {grayStarArray.map(() => grayStarIMG)}
+      <div>
+        {yellowStarArray.map(() => <img src={YellowStar} alt="Yellow star" key={Math.random()} />)}
+        {grayStarArray.map(() => <img src={GrayStar} alt="Gray Star" key={Math.random()} />)}
+      </div>
+      <div>
+        ({count})
+      </div>
     </div>
   );
 };
