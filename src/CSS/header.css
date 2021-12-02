@@ -1,7 +1,7 @@
-#userName {
-  color: #3655C7;
-  font-weight: 500;
-  cursor: pointer;
+#HContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 #productQuantity {
@@ -12,3 +12,26 @@
   color: white;
   text-align: center;
 }
+
+#userName {
+  color: #3655C7;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#ArkosLogo {
+  margin-top: 16px;
+  margin-left: 80px;
+  position: absolute;
+}
+
+#quantityContainer {
+  display: 'flex';
+  flex-direction: 'row-reverse';
+  margin-right: '-20px';
+}
+
+
+
+
+

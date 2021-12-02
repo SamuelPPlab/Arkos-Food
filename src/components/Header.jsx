@@ -8,11 +8,16 @@ import "../CSS/header.css";
 
 const Header = ({ location, quantity }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const arkosLogoProps = {
+    id: 'ArkosLogo',
+    src: ArkosFoodLogo,
+    alt: 'Arkos Food Logo',
+  };
 
   return(
-    <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+    <div id="HContainer">
       <div>
-        <img src={ArkosFoodLogo} alt="Arkos Food Logo" style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }} />
+        <img {...arkosLogoProps} />
       </div>
       <div style={{ display: 'flex', paddingTop: '30px', paddingRight: '10px' }}>
         <div style={{ paddingRight: '10px' }}>
@@ -22,7 +27,7 @@ const Header = ({ location, quantity }) => {
             </div></div>
           }
           <Link to="/checkout" style={{ paddingRight: '1%', width: '31px', height: '31px' }}>
-            <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '25px' } : { color: 'black' }} alt="Small Shopping Cart" />
+            <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '25px' } : { color: 'black', paddingTop: location === 'Carrinho' && '25px' }} alt="Small Shopping Cart" />
           </Link>
         </div>
         <div style={{ width: '500px', paddingTop: '40px' }}>
