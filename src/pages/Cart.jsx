@@ -26,7 +26,7 @@ const Cart = ({ items, products }) => {
   return(
     <div>
       <Header />
-      <NavigationBar />
+      <NavigationBar currentPage="Carrinho" />
       <div>
         {
           products.map((item) => (<CartCard item={item} key={Math.random()} />))
