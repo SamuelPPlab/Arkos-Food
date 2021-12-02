@@ -4,3 +4,11 @@
   cursor: pointer;
 }
 
+#productQuantity {
+  width: 25px;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #D94A4A;
+  color: white;
+  text-align: center;
+}

@@ -17,13 +17,15 @@ const Header = ({ location, quantity }) => {
       <div style={{ display: 'flex', paddingTop: '30px', paddingRight: '10px' }}>
         <div style={{ paddingRight: '10px' }}>
           {
-            location === 'main' && quantity > 0 && <div style={{ display: 'flex', flexDirection: 'row-reverse' }}> {quantity} </div>
+            location === 'main' && quantity > 0 && <div style={{ display: 'flex', flexDirection: 'row-reverse', marginRight: '-20px' }}><div id="productQuantity">
+              {quantity}
+            </div></div>
           }
           <Link to="/checkout" style={{ paddingRight: '1%', width: '31px', height: '31px' }}>
-            <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '20px' } : { color: 'black' }} alt="Small Shopping Cart" />
+            <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '25px' } : { color: 'black' }} alt="Small Shopping Cart" />
           </Link>
         </div>
-        <div style={{ width: '500px', paddingTop: '35px', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ width: '500px', paddingTop: '40px' }}>
           <div onClick={() => setShowMenu(!showMenu)}>Olá, <span id="userName">Irineu da silva costa!</span></div>
           {
             showMenu && <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
