@@ -7,7 +7,7 @@ import PersonIcon from '../images/PersonIcon.png';
 
 const Header = ({ location, quantity }) => {
   const [showMenu, setShowMenu] = useState(false);
-  console.log(showMenu)
+
   return(
     <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
       <div>
@@ -22,14 +22,14 @@ const Header = ({ location, quantity }) => {
             <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '20px' } : { color: 'black' }} alt="Small Shopping Cart" />
           </Link>
         </div>
-        <div style={{ width: '500px', paddingTop: '35px', display: 'flex' }}>
-          Olá <div onClick={() => setShowMenu(!showMenu)}>, Irineu da silva costa!</div>
+        <div style={{ width: '500px', paddingTop: '35px', display: 'flex', flexDirection: 'column' }}>
+          <div onClick={() => setShowMenu(!showMenu)}>Olá, <span>Irineu da silva costa!</span></div>
           {
-          showMenu && <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Link to="/edit-profile"><img src={PersonIcon} alt="Edit Profile" /> Editar Perfil</Link>
-            <Link to="/" ><img src={ExitIcon} alt="Exit" />SAIR</Link>
-          </div>
-        }
+            showMenu && <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+              <Link to="/edit-profile"><img src={PersonIcon} alt="Edit Profile" /> Editar Perfil</Link>
+              <Link to="/" ><img src={ExitIcon} alt="Exit" />SAIR</Link>
+            </div>
+          }
         </div>
       </div>
     </div>
