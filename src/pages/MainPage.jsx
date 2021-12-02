@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
@@ -15,25 +17,11 @@ const MainPage = ({ stock, loading }) => {
     dispatch(fetchAllProducts());
   }, []);
 
-  const fullArkosLogo = <img src={ArkosFoodLogo} alt="Arkos Food Logo" style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }} />;
-
   if(loading) return <div>loading</div>;
 
   return(
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-        <div>
-          {fullArkosLogo}
-        </div>
-        <div style={{ display: 'flex', paddingTop: '30px', paddingRight: '10px' }}>
-          <div style={{ paddingRight: '10px' }}>
-            <img src={SmallShoppingCart} alt="Small Shopping Cart" style={{ paddingRight: '1%', width: '31px', height: '31px' }} />
-          </div>
-          <div style={{ width: '500px', paddingTop: '10px' }}>
-            Olá, Irineu da silva costa!
-          </div>
-        </div>
-      </div>
+      <Header />
       <div>
         <SearchBar />
       </div>
