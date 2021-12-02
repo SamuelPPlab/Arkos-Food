@@ -11,6 +11,7 @@
   background-color: #D94A4A;
   color: white;
   text-align: center;
+  margin-left: 25px;
 }
 
 #userName {
@@ -27,9 +28,11 @@
 
 #quantityContainer {
   display: 'flex';
-  flex-direction: 'row-reverse';
-  margin-right: '-20px';
+  flex-direction: 'row';
+  margin-right: '0px';
+  width: 50px;
 }
+
 
 
 
