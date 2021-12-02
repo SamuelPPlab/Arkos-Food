@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import MiniShoppingCart from '../images/MiniShoppingCart.png';
+import RatingStars from './RatingStars';
 import { addItemToCart } from "../redux/actions/checkoutActions";
 import Button from "./Button";
+import "../CSS/cards.css";
 
 const ProductCard = ({ item }) => {
-  const { title, description, image, price, id, rating: { rate } } = item;
+  const { title, description, image, price, id, rating } = item;
 
   const dispatch = useDispatch();
 
@@ -18,20 +20,12 @@ const ProductCard = ({ item }) => {
     id: 'addToCartButton',
   };
 
+
   return (
-    <div style={{
-      width: '300px',
-      width: '298px',
-      left: '0px',
-      top: '0px',
-      background: '#FCFCFC',
-      borderRadius: '20px',
-      filter: 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1)) drop-shadow(-2px -2px 4px rgba(0, 0, 0, 0.1))',
-      marginBottom: '30px'
-    }}>
+    <div id="productCardContainer">
       <img src={image} style={{ width: '250px', height: '167px' }} />
-      <h1>{title}</h1>
-      <p>{rate}</p>
+      <h1 className="paddingAround">{title}</h1>
+      <RatingStars rating={rating} />
       <p>{description}</p>
       <Button {...priceButtonProps} />
     </div>
