@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import CartCard from "../components/CartCard";
 import { clearShoppingCart, fetchAllCartItems } from "../redux/actions/checkoutActions";
+import Header from "../components/Header";
+import NavigationBar from "../components/NavigationBar";
 
 const Cart = ({ items, products }) => {
   const dispatch = useDispatch();
@@ -23,6 +25,8 @@ const Cart = ({ items, products }) => {
 
   return(
     <div>
+      <Header />
+      <NavigationBar />
       <div>
         {
           products.map((item) => (<CartCard item={item} key={Math.random()} />))
