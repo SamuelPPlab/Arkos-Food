@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
-import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
-import SmallShoppingCart from '../images/SmallShoppingCart.png';
 import { fetchAllProducts, fetchMainData } from "../redux/actions/mainPageActions";
 
-const MainPage = ({ stock, loading }) => {
+const MainPage = ({ stock, loading, items }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +18,7 @@ const MainPage = ({ stock, loading }) => {
 
   return(
     <div>
-      <Header />
+      <Header location="main" quantity={items.length} />
       <div>
         <SearchBar />
       </div>
@@ -33,10 +30,11 @@ const MainPage = ({ stock, loading }) => {
   );
 };
 
-const mapStateToProps = ({ mainPageReducer: { stock, loading, error } }) => ({
+const mapStateToProps = ({ mainPageReducer: { stock, loading, error }, checkoutPageReducer: { items } }) => ({
   stock,
   loading,
   error,
+  items,
 });
 
 export default connect(mapStateToProps)(MainPage);
