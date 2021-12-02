@@ -15,7 +15,7 @@ const checkoutPageReducer = (state = INITIAL_STATE, action) => {
     case ADD_PRODUCTS:
       return { ...state, products };
     case REMOVE_ITEM:
-      return { ...state }
+      return { ...state, products: state.products.filter(({ key }) => key !== action.key) };
     default:
       return state;
   };

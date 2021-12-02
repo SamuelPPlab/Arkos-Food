@@ -6,7 +6,7 @@ export const REMOVE_ITEM = 'REMOVE_ITEM';
 
 export const addItemToCart = (id) => ({ type: ADD_ITEM, id });
 
-export const removeItemFromCart = (id) => ({ type: REMOVE_ITEM, id });
+export const removeItemFromCart = (key) => ({ type: REMOVE_ITEM, key });
 
 const addItemsToProductList = (products) => ({ type: ADD_PRODUCTS, products });
 
