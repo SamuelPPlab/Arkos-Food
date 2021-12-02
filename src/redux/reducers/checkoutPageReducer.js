@@ -1,4 +1,4 @@
-import { ADD_ITEM, ADD_PRODUCTS } from "../actions/checkoutActions";
+import { ADD_ITEM, ADD_PRODUCTS, REMOVE_ITEM } from "../actions/checkoutActions";
 
 const INITIAL_STATE = {
   items: [],
@@ -14,6 +14,8 @@ const checkoutPageReducer = (state = INITIAL_STATE, action) => {
       return { ...state, items: items ? [...items, id] : [id] };
     case ADD_PRODUCTS:
       return { ...state, products };
+    case REMOVE_ITEM:
+      return { ...state }
     default:
       return state;
   };

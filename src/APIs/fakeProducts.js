@@ -7,5 +7,5 @@ export const fetchStock = (limit) => {
 
 export const fetchItemByID = (id) => {
   const url = `https://fakestoreapi.com/products/${id}`;
-  return fetch(url).then((r) => r.json());
+  return fetch(url).then((r) => r.json()).then((r) => ({...r, key: Math.random()}));
 };
