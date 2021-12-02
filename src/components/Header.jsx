@@ -14,11 +14,17 @@ const Header = ({ location, quantity }) => {
     alt: 'Arkos Food Logo',
   };
 
+  const cartIMGprops = {
+    src: SmallShoppingCart,
+    style: quantity === 0 
+      ? { paddingTop: '25px' }
+      : { paddingTop: location === 'Carrinho' && '25px', paddingRight: '15px' },
+    alt: "Small Shopping Cart"
+  };
+
   return(
     <div id="HContainer">
-      <div>
-        <img {...arkosLogoProps} />
-      </div>
+      <div><img {...arkosLogoProps} /></div>
       <div style={{ display: 'flex', paddingTop: '30px', paddingRight: '10px' }}>
         <div style={{ paddingRight: '10px' }}>
           {
@@ -27,9 +33,7 @@ const Header = ({ location, quantity }) => {
             </div></div>
           }
           <div style={{ width: '50px'}}>
-            <Link to="/checkout" >
-              <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '25px' } : { paddingTop: location === 'Carrinho' && '25px', paddingRight: '15px' }} alt="Small Shopping Cart" />
-            </Link>
+            <Link to="/checkout" ><img {...cartIMGprops} /></Link>
           </div>
         </div>
         <div style={{ width: '500px', paddingTop: '40px' }}>
