@@ -66,37 +66,13 @@ const Login = () => {
     className: isDisabled ? 'submitLoginDisabled' : 'submitLoginEnabled',
   };
 
-  const welcomeStyle = {
-    paddingTop: '20%',
-    font: 'Roboto',
-    fontWeight: '500',
-    style: 'normal',
-    fontSize: '36px',
-    lineHeight: '120%',
-    letterSpacing: '0.007em',
-    color: '#1C2025'
-  };
-
-  const noAccountStyle = {
-    width: '150px',
-    height: '18px',
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: '12px',
-    lineHeight: '150%',
-    letterSpacing: '0.007em',
-    marginLeft: '200px',
-    marginTop: '10px',
-    color: '#1C2025',
-  };
-
   const fullArkosLogo = <img src={ArkosFoodLogo} style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }} />;
-  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '200px' }} />; 
+  const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '200px' }} />;
 
-  const noAccount = <div style={noAccountStyle}>
-    Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link>
-  </div>;
+  const emailWarning = <div className="warningText">O email deve ter o formato correto.</div>;
+  const passwordLengthWarning = <div className="warningText">A senha deve ter pelo menos oito caracteres.</div>;
+
+  const noAccount = <pre id="noAccount">Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link></pre>;
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
@@ -106,9 +82,11 @@ const Login = () => {
       </div>
       <div style={{ width: '50%', textAlign: 'center', height: '100%' }}>
         <div id="loginFormContainer">
-          <h1 style={welcomeStyle}>Seja bem-vindo!</h1>
+          <h1 id='welcomeText'>Seja bem-vindo!</h1>
           <Input {...nameInputProps} />
+          {(!emailValidator(email) && email !== '') && emailWarning}
           <Input {...passwordInputProps} />
+          {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && passwordLengthWarning}
           <Button {...loginButtonProps} />
           {noAccount}
         </div>

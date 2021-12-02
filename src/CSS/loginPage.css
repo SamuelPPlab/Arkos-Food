@@ -7,6 +7,37 @@
   border-radius: 20px;
 }
 
+#welcomeText {
+  padding-top: 20%;
+  font: Roboto;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #1C2025;
+}
+
+#noAccount {
+  width: 150px;
+  height: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0.007em;
+  margin-left: 180px;
+  margin-top: 10px;
+  color: #1C2025;
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+}
+
+.warningText {
+  color: red;
+}
+
 .inputBox {
   width: 506px;
   height: 74px;
