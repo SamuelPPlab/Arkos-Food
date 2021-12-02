@@ -4,6 +4,7 @@ import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import SmallShoppingCart from '../images/SmallShoppingCart.png';
 import ExitIcon from '../images/ExitIcon.png';
 import PersonIcon from '../images/PersonIcon.png';
+import "../CSS/header.css";
 
 const Header = ({ location, quantity }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,7 +24,7 @@ const Header = ({ location, quantity }) => {
           </Link>
         </div>
         <div style={{ width: '500px', paddingTop: '35px', display: 'flex', flexDirection: 'column' }}>
-          <div onClick={() => setShowMenu(!showMenu)}>Olá, <span>Irineu da silva costa!</span></div>
+          <div onClick={() => setShowMenu(!showMenu)}>Olá, <span id="userName">Irineu da silva costa!</span></div>
           {
             showMenu && <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
               <Link to="/edit-profile"><img src={PersonIcon} alt="Edit Profile" /> Editar Perfil</Link>
