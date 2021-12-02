@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import SmallShoppingCart from '../images/SmallShoppingCart.png';
+import ExitIcon from '../images/ExitIcon.png';
+import PersonIcon from '../images/PersonIcon.png';
 
-const Header = () => {
+const Header = ({ location, quantity }) => {
+  const [showMenu, setShowMenu] = useState(false);
+
   return(
     <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
       <div>
@@ -11,12 +15,21 @@ const Header = () => {
       </div>
       <div style={{ display: 'flex', paddingTop: '30px', paddingRight: '10px' }}>
         <div style={{ paddingRight: '10px' }}>
+          {
+            location === 'main' && quantity > 0 && <div style={{ display: 'flex', flexDirection: 'row-reverse' }}> {quantity} </div>
+          }
           <Link to="/checkout" style={{ paddingRight: '1%', width: '31px', height: '31px' }}>
-            <img src={SmallShoppingCart} alt="Small Shopping Cart" />
+            <img src={SmallShoppingCart} style={quantity === 0 ? { paddingTop: '20px' } : { color: 'black' }} alt="Small Shopping Cart" />
           </Link>
         </div>
-        <div style={{ width: '500px', paddingTop: '10px' }}>
-          Olá, Irineu da silva costa!
+        <div style={{ width: '500px', paddingTop: '35px', display: 'flex', flexDirection: 'column' }}>
+          <div onClick={() => setShowMenu(!showMenu)}>Olá, <span>Irineu da silva costa!</span></div>
+          {
+            showMenu && <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+              <Link to="/edit-profile"><img src={PersonIcon} alt="Edit Profile" /> Editar Perfil</Link>
+              <Link to="/" ><img src={ExitIcon} alt="Exit" />SAIR</Link>
+            </div>
+          }
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ const CartCard = ({ item }) => {
   const removeItemFromCartButtonProps = {
     name: trashCanIMG,
     id: 'RemoveItemFromCart',
-    onClick: () => dispatch(removeItemFromCart(key)),
+    onClick: () => dispatch(removeItemFromCart(key, id)),
   };
 
   return (

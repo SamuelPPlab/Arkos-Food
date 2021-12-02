@@ -7,7 +7,7 @@ export const CLEAR_SHOPPING_CART = 'CLEAR_SHOPPING_CART';
 
 export const addItemToCart = (id) => ({ type: ADD_ITEM, id });
 
-export const removeItemFromCart = (key) => ({ type: REMOVE_ITEM, key });
+export const removeItemFromCart = (key, id) => ({ type: REMOVE_ITEM, key, id });
 
 export const clearShoppingCart = () => ({ type: CLEAR_SHOPPING_CART })
 
