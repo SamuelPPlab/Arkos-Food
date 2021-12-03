@@ -11,6 +11,7 @@ import {
 import NoteBook from "../images/NoteBook.png";
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import '../CSS/loginPage.css';
+import { userRegistration } from "../localStorage/user";
 
 
 const SignUp = () => {
@@ -87,7 +88,10 @@ const SignUp = () => {
   const signUpButtonProps = {
     id: "Cadastrar",
     name: "Cadastrar",
-    onClick: () => setGoToMain(true),
+    onClick: () => {
+      userRegistration(fullName, passwordInput, email);
+      setGoToMain(true);
+    },
     disabled: disableSignUp,
     className: disableSignUp ? 'submitLoginDisabled' : 'submitLoginEnabled',
   };
