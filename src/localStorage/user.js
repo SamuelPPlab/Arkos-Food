@@ -16,3 +16,14 @@ export const login = (email, password) => {
   localStorage.setItem('currentUser', JSON.stringify(userLoggingIn));
   return true;
 };
+
+export const editUserInfo = (currentEmail, newName, newEmail) => {
+  let users = getLocalStorageKey('users');
+  const currentUser = users.find((registeredUser) => registeredUser.email === currentEmail);
+  const editedUser = { ...currentUser, fullName: newName, email: newEmail };
+  users = users.filter((user) => (user !== currentUser));
+  users = [...users, editedUser];
+  
+  localStorage.setItem('currentUser', JSON.stringify(editedUser));
+  localStorage.setItem('users', JSON.stringify([...users, editedUser]));
+};
