@@ -55,6 +55,38 @@
   text-align: left;
 }
 
+#checkoutImage {
+  width: 222px;
+  height: 179px;
+  background: black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 0px 0px 20px;
+}
+
+#checkoutCardContainer {
+  width: 1280px;
+  height: 179px;
+  left: 80px;
+  top: 208px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#removeItem {
+  width: 25px;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #D94A4A;
+  color: white;
+  text-align: center;
+}
+
+#trashCanIMG {
+  margin-top: 10px;
+}
+
 .paddingAround {
   padding-left: 20px;
   padding-right: 20px;
