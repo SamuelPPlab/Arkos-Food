@@ -13,5 +13,6 @@ export const login = (email, password) => {
   if(!userLoggingIn || userLoggingIn.password !== password) {
     return false;
   }
+  localStorage.setItem('currentUser', JSON.stringify(userLoggingIn));
   return true;
 };

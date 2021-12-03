@@ -39,7 +39,7 @@ const Header = ({ location, quantity }) => {
       <div>
         <img src={ExitIcon} alt="Exit" className="optionImage" />
       </div>
-      <Link to="/" className="optionText">
+      <Link to="/" onClick={() => localStorage.setItem('currentUser', '[]')} className="optionText">
         SAIR
       </Link>
     </div>
