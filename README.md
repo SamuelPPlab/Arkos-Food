@@ -2,6 +2,11 @@
 
 Bem-vindo ao Read-me do projeto Arkos Food. Aqui você encontra informações sobre o projeto.
 
+## Ideia do projeto: 
+
+A ideia por trás do projeto Arkos Food é criar uma aplicação que permita que o usuário se cadastra, faça login, tenha acesso aos produtos que a API fake products oferece. Também é necessário que o usuário consiga adicionar os produtos no carrinho, e que quando na página de checkout seja mostrado o preço total dos produtos e que tenha a opção de comprar.
+
+
 ## Telas:
 
 
