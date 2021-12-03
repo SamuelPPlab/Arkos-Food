@@ -12,14 +12,13 @@ const ProductCard = ({ item }) => {
   const dispatch = useDispatch();
 
   const miniCartIMG = <img src={MiniShoppingCart} alt="Shopping cart" style={{ paddingRight: '10px' }} />;
-  const priceText = <div id="priceText">{miniCartIMG}  R$ {price}</div>
+  const priceText = <div id="priceText">{miniCartIMG}  R$ {price.toFixed(2)}</div>
 
   const priceButtonProps = {
     name: priceText,
     onClick: () => dispatch(addItemToCart(id)),
     id: 'buttonAddToCart',
   };
-
 
   return (
     <div className="productCardContainer">
