@@ -18,7 +18,7 @@ const Header = ({ location, quantity }) => {
     src: SmallShoppingCart,
     style: quantity === 0 
       ? { paddingTop: '25px' }
-      : { paddingTop: location !== 'Main' && '25px', paddingRight: '15px' },
+      : { paddingTop: location !== 'main' && '25px', paddingRight: '15px' },
     alt: "Small Shopping Cart"
   };
 
