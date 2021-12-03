@@ -34,6 +34,7 @@ const Login = () => {
     letterSpacing: '0.007em',
     color: '#1C2025',
     paddingTop: '30px',
+    marginLeft: '-430px',
     paddingBottom: '50px'
   };
 
@@ -44,7 +45,7 @@ const Login = () => {
     setFieldValue: setEmail,
     type: "email",
     style: inputBoxTextStyle,
-    className: 'inputBox',
+    className: 'inputBoxLogin',
   };
 
   const passwordInputProps = {
@@ -54,7 +55,7 @@ const Login = () => {
     setFieldValue: setPasswordInput,
     type: "password",
     style: inputBoxTextStyle,
-    className: 'inputBox',
+    className: 'inputBoxLogin',
   };
 
   const loginButtonProps = {
