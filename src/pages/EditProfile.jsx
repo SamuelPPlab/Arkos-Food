@@ -6,6 +6,7 @@ import { emailValidator, validateUserName } from "../services/validators";
 import Header from "../components/Header";
 import NavigationBar from "../components/NavigationBar";
 import "../CSS/editProfile.css";
+import "../CSS/loginPage.css";
 
 const EditProfile = () => {
 
@@ -24,12 +25,6 @@ const EditProfile = () => {
     }
     return setDisableEditDetails(true);
   }, [fullName, newEmail]);
-
-  const inputStyle = {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-  };
 
   const fullNameProps = {
     id: 'EditarNomeCompleto',
@@ -69,26 +64,20 @@ const EditProfile = () => {
 
   if(goBackToMain) return <Navigate to="/main" />;
 
-  const nameWarning = <div>O nome deve conter apenas letras!</div>;
-  const emailWarning = <div>O email deve ter o formato correto.</div>;
+  const nameWarning = <div className="warningText">O nome deve conter apenas letras!</div>;
+  const emailWarning = <div className="warningText">O email deve ter o formato correto.</div>;
 
   return(
     <div id="editProfileForm">
       <Header />
       <NavigationBar currentPage="Editar Perfil" />
-      <div id="formContainer">
-        <div style={inputStyle}>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
+        <div id="formContainer">
           <Input {...fullNameProps} />
           {(!validateUserName(fullName) && fullName !== '') && nameWarning}
-        </div>
-        <div style={inputStyle}>
           <Input {...currentEmailProps} />
-        </div>
-        <div style={inputStyle}>
           <Input {...NewEmailProps} />
           {(!emailValidator(newEmail) && newEmail !== '') && emailWarning}
-        </div>
-        <div style={inputStyle}>
           <Button {...editProfileProps} />
         </div>
       </div>
