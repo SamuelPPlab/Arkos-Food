@@ -11,22 +11,22 @@ const ProductCard = ({ item }) => {
 
   const dispatch = useDispatch();
 
-  const miniCartIMG = <img src={MiniShoppingCart} alt="Shopping cart" />;
-  const priceText = <div>{miniCartIMG} {price}</div>
+  const miniCartIMG = <img src={MiniShoppingCart} alt="Shopping cart" style={{ paddingRight: '10px' }} />;
+  const priceText = <div id="priceText">{miniCartIMG}  R$ {price}</div>
 
   const priceButtonProps = {
     name: priceText,
     onClick: () => dispatch(addItemToCart(id)),
-    id: 'addToCartButton',
+    id: 'buttonAddToCart',
   };
 
 
   return (
-    <div id="productCardContainer">
+    <div className="productCardContainer">
       <img src={image} style={{ width: '250px', height: '167px' }} />
       <h1 className="paddingAround">{title}</h1>
       <RatingStars rating={rating} />
-      <p>{description}</p>
+      <p className="paddingAround" id="description">{description}</p>
       <Button {...priceButtonProps} />
     </div>
   );

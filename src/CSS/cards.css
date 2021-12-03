@@ -1,4 +1,4 @@
-#productCardContainer {
+.productCardContainer {
   width: 300px;
   left: 0px;
   top: 0px;
@@ -16,6 +16,31 @@
 
 #stars {
   padding-left: 20px;
+}
+
+#description {
+  padding-bottom: 70px;
+}
+
+#buttonAddToCart {
+  width: 259px;
+  height: 48px;
+  background: #3655C7;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 10px;
+}
+
+#priceText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #FCFCFC;
 }
 
 #countText {
