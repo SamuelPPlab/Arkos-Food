@@ -148,6 +148,22 @@
   color: #3655C7;
 }
 
+#BuyButton {
+  width: 259px;
+  height: 48px;
+  left: 1077px;
+  top: 681px;
+  background: #3655C7;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #FCFCFC;
+}
+
 .paddingAround {
   padding-left: 20px;
   padding-right: 20px;

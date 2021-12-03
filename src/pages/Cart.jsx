@@ -33,10 +33,10 @@ const Cart = ({ items, products }) => {
           products.map((item) => (<CartCard item={item} key={Math.random()} />))
         }
       </div>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-40px' }}>
-        <pre id="total">TOTAL            <span id="bill"> R$ {total}</span></pre>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-40px', marginRight: '-240px' }}>
+        <pre id="total">TOTAL       <span id="bill"> R$ {total}</span></pre>
       </div>
-      <Link to="/main">
+      <Link to="/main" style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '560px' }}>
         <Button {...buyButtonProps} />
       </Link>
     </div>
