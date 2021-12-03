@@ -22,6 +22,25 @@ const Header = ({ location, quantity }) => {
     alt: "Small Shopping Cart"
   };
 
+  const userMenu = <div id="userMenu">
+    <div className="optionContainer">
+      <div>
+        <img src={PersonIcon} alt="Edit Profile" className="optionImage" />
+      </div>
+      <Link to="/edit-profile" className="optionText">
+        Editar Perfil
+      </Link>
+    </div>
+    <div className="optionContainer">
+      <div>
+        <img src={ExitIcon} alt="Exit" className="optionImage" />
+      </div>
+      <Link to="/" className="optionText">
+        SAIR
+      </Link>
+    </div>
+  </div>;
+
   return(
     <div id="HContainer">
       <div><img {...arkosLogoProps} /></div>
@@ -39,10 +58,7 @@ const Header = ({ location, quantity }) => {
         <div style={{ width: '500px', paddingTop: '40px' }}>
           <div onClick={() => setShowMenu(!showMenu)}>Olá, <span id="userName">Irineu da silva costa!</span></div>
           {
-            showMenu && <div style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
-              <Link to="/edit-profile"><img src={PersonIcon} alt="Edit Profile" /> Editar Perfil</Link>
-              <Link to="/" ><img src={ExitIcon} alt="Exit" />SAIR</Link>
-            </div>
+            showMenu && <div>{userMenu}</div>
           }
         </div>
       </div>

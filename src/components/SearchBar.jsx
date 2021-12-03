@@ -37,7 +37,7 @@ const SearchBar = () => {
     }
   }
   return(
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', width: '60%' }}>
       <Input {...searchBarProps} />
       <Button {...searchButtonProps} />
     </div>
