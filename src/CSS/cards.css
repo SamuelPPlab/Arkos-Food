@@ -12,6 +12,8 @@
   display: flex;
   max-height: 30px;
   height: 30x;
+  margin-top: -25px;
+  margin-bottom: -15px;
 }
 
 #stars {
@@ -55,6 +57,114 @@
   text-align: left;
 }
 
+#checkoutImage {
+  width: 222px;
+  height: 179px;
+  background: black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px 0px 0px 20px;
+}
+
+#checkoutCardContainer {
+  width: 1280px;
+  height: 179px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-bottom: 30px;
+}
+
+#removeItem {
+  width: 25px;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #D94A4A;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#trashCanIMG {
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 90px;
+}
+
+#price {
+  width: 84px;
+  height: 29px;
+  left: 1252px;
+  top: 537px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #3655C7;
+}
+
+#title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #1C2025;
+  margin-top: -6px;
+}
+
+#description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.007em;
+  color: #303030;
+}
+
+#total {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #1C2025;
+  margin-right: 800px;
+}
+
+#bill {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #3655C7;
+}
+
+#BuyButton {
+  width: 259px;
+  height: 48px;
+  left: 1077px;
+  top: 681px;
+  background: #3655C7;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #FCFCFC;
+  text-decoration: none;
+}
+
 .paddingAround {
   padding-left: 20px;
   padding-right: 20px;
@@ -63,4 +173,5 @@
 .stars {
   width: 16px;
   height: 16px;
+  margin-bottom: -2px;
 }

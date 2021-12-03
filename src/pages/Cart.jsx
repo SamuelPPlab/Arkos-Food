@@ -7,6 +7,7 @@ import CartCard from "../components/CartCard";
 import { clearShoppingCart, fetchAllCartItems } from "../redux/actions/checkoutActions";
 import Header from "../components/Header";
 import NavigationBar from "../components/NavigationBar";
+import "../CSS/cards.css";
 
 const Cart = ({ items, products }) => {
   const dispatch = useDispatch();
@@ -32,10 +33,10 @@ const Cart = ({ items, products }) => {
           products.map((item) => (<CartCard item={item} key={Math.random()} />))
         }
       </div>
-      <div>
-        Total: R$: {total}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-40px', marginRight: '-240px' }}>
+        <pre id="total">TOTAL       <span id="bill"> R$ {total}</span></pre>
       </div>
-      <Link to="/main">
+      <Link to="/main" style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '560px' }}>
         <Button {...buyButtonProps} />
       </Link>
     </div>
