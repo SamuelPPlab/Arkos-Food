@@ -4,7 +4,10 @@ Bem-vindo ao Read-me do projeto Arkos Food. Aqui você encontra informações so
 
 ## Telas:
 
+
 ### Tela de Login
+
+
 
 A primeira coisa que você verá quando abrir o projeto.
 
@@ -21,7 +24,10 @@ Ela também avisa quando o email digitado não está cadastrado.
 E por último, ela mostra uma opção para ir para a tela de cadastro.
 
 
+
 ### Tela de cadastro
+
+
 
 Se for a sua primeira vez usando o Arkos Food, você vai acabar chegando aqui.
 
@@ -35,7 +41,11 @@ Quando o botão "Cadastrar" é ativado, você será redirecionado pra página pr
 
 Ela também tem a opção de voltar pra tela de login caso você tenha vindo sem querer.
 
+
+
 ### Tela Principal
+
+
 
 Assim que for redirecionado pra cá, você verá um ícone de "carregando" enquanto a página busca as informações necessárias para ser populada.
 
@@ -51,7 +61,11 @@ Logo abaixo da barra de busca, ficam os cards dos produtos - oito deles.
 
 Cada card informa o nome do produto, uma foto, avaliações, descrição, e também tem um botão com o preço que permite adicionar ao carrinho.
 
+
+
 ### Tela de edição de dados
+
+
 
 A tela de edição de perfil tem um header igual ao da página principal, com o carrinho e menu mencionados anteriormente.
 
@@ -63,7 +77,11 @@ Todos têm os mesmos requisitos da pagina de login e cadastro para desbloquear o
 
 Por último, há um botão que confirma as alterações dos dados.
 
+
+
 ### Tela de Checkout
+
+
 
 A tela de checkout tem um header igual ao da tela de perfil e tela principal.
 
@@ -72,3 +90,14 @@ Ela também tem uma barra de navegação que permite que o usuário volte à loj
 Cada item adicionado ao carrinho tem um card que mostra a sua foto, nome, avaliação, descrição, preço, e um botão para remover o item do carrinho.
 
 No fim da lista de itens, há um texto com o total da compra, e um botão "Comprar" que limpa o carrinho, e redireciona pra página principal.
+
+
+### Tecnologias usadas:
+
+## Redux
+
+Para gerenciar os estados.
+
+## React
+
+Para construir o front.
