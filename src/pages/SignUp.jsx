@@ -90,10 +90,18 @@ const SignUp = () => {
     Já possui um cadastro? <Link to="/">Login</Link>
   </pre>;
 
-  const nameWarning = <div>O nome deve conter apenas letras!</div>;
-  const emailWarning = <div>O email deve ter o formato correto.</div>;
-  const passwordLengthWarning = <div>A senha deve ter pelo menos oito caracteres.</div>;
-  const differentPasswordsWarning = <div>As senhas devem ser iguais.</div>;
+  const nameWarning = <div className="warningText warningPadding">
+      O nome deve conter apenas letras!
+    </div>;
+  const emailWarning = <div className="warningText warningPadding">
+      O email deve ter o formato correto.
+    </div>;
+  const passwordLengthWarning = <div className="warningText warningPadding">
+      A senha deve ter pelo menos oito caracteres.
+    </div>;
+  const differentPasswordsWarning = <div className="warningText warningPadding">
+      As senhas devem ser iguais.
+    </div>;
 
   if(goToMain) return <Navigate to="/main" />;
 

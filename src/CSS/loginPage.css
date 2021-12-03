@@ -47,6 +47,10 @@
   color: red;
 }
 
+.warningPadding {
+  padding-left: 30px;
+}
+
 .inputBox {
   width: 506px;
   height: 74px;
