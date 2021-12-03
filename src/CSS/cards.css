@@ -127,6 +127,27 @@
   color: #303030;
 }
 
+#total {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #1C2025;
+  margin-right: 800px;
+}
+
+#bill {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #3655C7;
+}
+
 .paddingAround {
   padding-left: 20px;
   padding-right: 20px;
