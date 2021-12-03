@@ -22,6 +22,7 @@ const EditProfile = () => {
     if(isNewEmailValid && isUsernameValid) {
       return setDisableEditDetails(false);
     }
+    return setDisableEditDetails(true);
   }, [fullName, newEmail]);
 
   const inputStyle = {
@@ -63,6 +64,7 @@ const EditProfile = () => {
       setGoBackToMain(true);
     },
     disabled: disableEditDetails,
+    className: disableEditDetails ? 'editProfileButtonInactive' : 'editProfileButtonActive',
   };
 
   if(goBackToMain) return <Navigate to="/main" />;
