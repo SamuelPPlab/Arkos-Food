@@ -1,0 +1,83 @@
+#loginFormContainer {
+  width: 558px;
+  height: 642px;
+  margin-top: 15%;
+  margin-left: 25%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+#welcomeText {
+  padding-top: 20%;
+  font: Roboto;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #1C2025;
+}
+
+#noAccount {
+  width: 150px;
+  height: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0.007em;
+  margin-left: 180px;
+  margin-top: 10px;
+  color: #1C2025;
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+}
+
+.warningText {
+  color: red;
+}
+
+.inputBox {
+  width: 506px;
+  height: 74px;
+  border: 2px solid #D4D9E6;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.submitLoginEnabled {
+  padding: 20px;
+  margin-top: 40px;
+  padding-left: 110px;
+  padding-right: 110px;
+  background: #3655C7;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.007em;
+  color: #EDEFF2;
+}
+
+.submitLoginDisabled {
+  padding: 20px;
+  margin-top: 40px;
+  padding-left: 110px;
+  padding-right: 110px;
+  background: #5ba4cf;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.007em;
+  color: #EDEFF2;
+}

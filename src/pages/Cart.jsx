@@ -25,7 +25,7 @@ const Cart = ({ items, products }) => {
 
   return(
     <div>
-      <Header />
+      <Header location="Carrinho" />
       <NavigationBar currentPage="Carrinho" />
       <div>
         {
