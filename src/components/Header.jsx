@@ -5,9 +5,13 @@ import SmallShoppingCart from '../images/SmallShoppingCart.png';
 import ExitIcon from '../images/ExitIcon.png';
 import PersonIcon from '../images/PersonIcon.png';
 import "../CSS/header.css";
+import { getLocalStorageKey } from "../localStorage/getKey";
 
 const Header = ({ location, quantity }) => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const { fullName } = getLocalStorageKey('currentUser');
+
   const arkosLogoProps = {
     id: 'ArkosLogo',
     src: ArkosFoodLogo,
@@ -35,7 +39,7 @@ const Header = ({ location, quantity }) => {
       <div>
         <img src={ExitIcon} alt="Exit" className="optionImage" />
       </div>
-      <Link to="/" className="optionText">
+      <Link to="/" onClick={() => localStorage.setItem('currentUser', '[]')} className="optionText">
         SAIR
       </Link>
     </div>
@@ -56,7 +60,7 @@ const Header = ({ location, quantity }) => {
           </div>
         </div>
         <div style={{ width: '500px', paddingTop: '40px' }}>
-          <div onClick={() => setShowMenu(!showMenu)}>Olá, <span id="userName">Irineu da silva costa!</span></div>
+          <div onClick={() => setShowMenu(!showMenu)}>Olá, <span id="userName">{fullName}</span></div>
           {
             showMenu && <div>{userMenu}</div>
           }

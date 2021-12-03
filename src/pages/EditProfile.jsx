@@ -7,11 +7,13 @@ import Header from "../components/Header";
 import NavigationBar from "../components/NavigationBar";
 import "../CSS/editProfile.css";
 import "../CSS/loginPage.css";
+import { getLocalStorageKey } from "../localStorage/getKey";
+import { editUserInfo } from "../localStorage/user";
 
 const EditProfile = () => {
+  const { email, fullName } = getLocalStorageKey('currentUser');
 
-  const [fullName, setFullName] = useState('');
-  const [currentEmail, setCurrentEmail] = useState('');
+  const [name, setFullName] = useState(fullName);
   const [newEmail, setNewEmail] = useState('');
   const [disableEditDetails, setDisableEditDetails] = useState(true);
   const [goBackToMain, setGoBackToMain] = useState(false);
@@ -29,7 +31,7 @@ const EditProfile = () => {
   const fullNameProps = {
     id: 'EditarNomeCompleto',
     name: 'Nome Completo',
-    fieldValue: fullName,
+    fieldValue: name,
     setFieldValue: setFullName,
     className: 'input',
   };
@@ -37,8 +39,8 @@ const EditProfile = () => {
   const currentEmailProps = {
     id: "currentEmail",
     name: "Email Atual",
-    fieldValue: currentEmail,
-    setFieldValue: setCurrentEmail,
+    fieldValue: email,
+    readOnly: true,
     type: "email",
     className: 'input',
   };
@@ -57,6 +59,7 @@ const EditProfile = () => {
     name: "Alterar Dados",
     onClick: () => {
       setGoBackToMain(true);
+      editUserInfo(email, name, newEmail);
     },
     disabled: disableEditDetails,
     className: disableEditDetails ? 'editProfileButtonInactive' : 'editProfileButtonActive',

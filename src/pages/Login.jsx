@@ -6,12 +6,15 @@ import { emailValidator, passwordLengthValidator } from '../services/validators'
 import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import ShoppingCart from '../images/ShoppingCart.png';
 import '../CSS/loginPage.css';
+import { login } from '../localStorage/user';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
   const [isDisabled, setIsDisabled] = useState(true);
   const [redirect, setRedirect] = useState(false);
+  const [isUserRegistered, setIsUserRegistered] = useState(false);
+  const [notRegistered, setNotRegistered] = useState(false);
 
   useEffect(() => {
     const isEmailValid = emailValidator(email);
@@ -61,7 +64,13 @@ const Login = () => {
   const loginButtonProps = {
     name: "Entrar",
     id: "submitLogin",
-    onClick: () => setRedirect(true),
+    onClick: () => {
+      setIsUserRegistered(login(email, passwordInput));
+      if(isUserRegistered) {
+        setRedirect(true);
+      }
+      setNotRegistered(true);
+    },
     disabled:  isDisabled,
     className: isDisabled ? 'submitLoginDisabled' : 'submitLoginEnabled',
   };
@@ -71,6 +80,7 @@ const Login = () => {
 
   const emailWarning = <div className="warningText">O email deve ter o formato correto.</div>;
   const passwordLengthWarning = <div className="warningText">A senha deve ter pelo menos oito caracteres.</div>;
+  const notRegisteredWarning = <div className="warningText">Usuário não registrado</div>
 
   const noAccount = <pre className="noAccount">Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link></pre>;
 
@@ -87,6 +97,7 @@ const Login = () => {
           {(!emailValidator(email) && email !== '') && emailWarning}
           <Input {...passwordInputProps} />
           {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && passwordLengthWarning}
+          {notRegistered && notRegisteredWarning}
           <Button {...loginButtonProps} />
           {noAccount}
         </div>
