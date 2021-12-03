@@ -13,7 +13,7 @@ import { editUserInfo } from "../localStorage/user";
 const EditProfile = () => {
   const { email, fullName } = getLocalStorageKey('currentUser');
 
-  const [name, setFullName] = useState(fullName);
+  const [name, setName] = useState(fullName);
   const [newEmail, setNewEmail] = useState('');
   const [disableEditDetails, setDisableEditDetails] = useState(true);
   const [goBackToMain, setGoBackToMain] = useState(false);
@@ -32,7 +32,7 @@ const EditProfile = () => {
     id: 'EditarNomeCompleto',
     name: 'Nome Completo',
     fieldValue: name,
-    setFieldValue: setFullName,
+    setFieldValue: setName,
     className: 'input',
   };
 
@@ -69,7 +69,6 @@ const EditProfile = () => {
 
   const nameWarning = <div className="warningText">O nome deve conter apenas letras!</div>;
   const emailWarning = <div className="warningText">O email deve ter o formato correto.</div>;
-
   return(
     <div id="editProfileForm">
       <Header />
@@ -77,7 +76,7 @@ const EditProfile = () => {
       <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
         <div id="formContainer">
           <Input {...fullNameProps} />
-          {(!validateUserName(fullName) && fullName !== '') && nameWarning}
+          {(!validateUserName(name) && fullName !== '') && nameWarning}
           <Input {...currentEmailProps} />
           <Input {...NewEmailProps} />
           {(!emailValidator(newEmail) && newEmail !== '') && emailWarning}
