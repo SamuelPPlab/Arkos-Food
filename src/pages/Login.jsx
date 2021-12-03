@@ -66,7 +66,7 @@ const Login = () => {
     className: isDisabled ? 'submitLoginDisabled' : 'submitLoginEnabled',
   };
 
-  const fullArkosLogo = <img src={ArkosFoodLogo} style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }} />;
+  const fullArkosLogo = <img src={ArkosFoodLogo} alt="ArkosFood Logo" style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }} />;
   const shoppingCartIMG = <img src={ShoppingCart} alt="Shopping Cart" style={{ marginLeft: '80px', marginTop: '200px' }} />;
 
   const emailWarning = <div className="warningText">O email deve ter o formato correto.</div>;

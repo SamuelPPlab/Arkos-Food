@@ -3,7 +3,13 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
-import { emailValidator, passwordLengthValidator, passwordMatcher, validateUserName } from "../services/validators";
+import {
+  emailValidator,
+  passwordLengthValidator,
+  passwordMatcher, validateUserName
+} from "../services/validators";
+import NoteBook from "../images/NoteBook.png";
+import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
 import '../CSS/loginPage.css';
 
 
@@ -103,14 +109,27 @@ const SignUp = () => {
       As senhas devem ser iguais.
     </div>;
 
+  const fullArkosLogo = <img
+    src={ArkosFoodLogo}
+    style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }}
+    alt="ArkosFood Logo"
+  />;
+
+  const noteBookIMG = <img
+    src={NoteBook}
+    alt="Notebook"
+    style={{ marginTop: '330px', marginLeft: '102px' }}
+  />;
+
   if(goToMain) return <Navigate to="/main" />;
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
-      <div style={{ width: '50%', backgroundColor: '#E0E5F2', height: '100vh' }}>
-
+      <div style={{ width: '50%', backgroundColor: '#E0E5F2' }}>
+      {fullArkosLogo}
+      {noteBookIMG}
       </div>
-      <div style={{ width: '50%', height: '100vh', display: 'flex', justifyContent: 'center', paddingTop: '80px' }}>
+      <div style={{ width: '50%', display: 'flex', justifyContent: 'center', paddingTop: '80px' }}>
         <div id="signupFormContainer">
           <h1 className="welcomeText">Cadastre-se</h1>
           <Input {...nameProps} />
