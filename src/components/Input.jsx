@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Input = ({ name, fieldValue = null, id, className = null, placeholder = '',
   setFieldValue = null, type = 'text', readOnly = false, style = null }) => {
+
   const inputProps = {
     value: fieldValue,
     id,
@@ -14,8 +15,8 @@ const Input = ({ name, fieldValue = null, id, className = null, placeholder = ''
   };
 
   return (
-    <div style={style}>
-      <label htmlFor={id}>
+    <div>
+      <label style={style} htmlFor={id}>
         {name}
         <div>
           <input {...inputProps} />

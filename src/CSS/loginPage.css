@@ -7,7 +7,15 @@
   border-radius: 20px;
 }
 
-#welcomeText {
+#signupFormContainer {
+  width: 558px;
+  height: 796px;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.welcomeText {
   padding-top: 20%;
   font: Roboto;
   font-weight: 500;
@@ -15,9 +23,10 @@
   line-height: 120%;
   letter-spacing: 0.007em;
   color: #1C2025;
+  text-align: center;
 }
 
-#noAccount {
+.noAccount {
   width: 150px;
   height: 18px;
   font-family: Roboto;
@@ -44,6 +53,10 @@
   border: 2px solid #D4D9E6;
   box-sizing: border-box;
   border-radius: 20px;
+}
+
+.centerInput {
+  padding-left: 20px;
 }
 
 .submitLoginEnabled {

@@ -34,7 +34,6 @@ const Login = () => {
     letterSpacing: '0.007em',
     color: '#1C2025',
     paddingTop: '30px',
-    paddingLeft: '25px',
     paddingBottom: '50px'
   };
 
@@ -72,7 +71,7 @@ const Login = () => {
   const emailWarning = <div className="warningText">O email deve ter o formato correto.</div>;
   const passwordLengthWarning = <div className="warningText">A senha deve ter pelo menos oito caracteres.</div>;
 
-  const noAccount = <pre id="noAccount">Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link></pre>;
+  const noAccount = <pre className="noAccount">Ainda não possui cadastro? <Link to="/signup">Cadastre-se</Link></pre>;
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
@@ -82,7 +81,7 @@ const Login = () => {
       </div>
       <div style={{ width: '50%', textAlign: 'center', height: '100%' }}>
         <div id="loginFormContainer">
-          <h1 id='welcomeText'>Seja bem-vindo!</h1>
+          <h1 className='welcomeText'>Seja bem-vindo!</h1>
           <Input {...nameInputProps} />
           {(!emailValidator(email) && email !== '') && emailWarning}
           <Input {...passwordInputProps} />
