@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Projeto Arkos Food
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao Read-me do projeto Arkos Food. Aqui você encontra informações sobre o projeto.
 
-## Available Scripts
+## Telas:
 
-In the project directory, you can run:
+### Tela de Login
 
-### `npm start`
+A primeira coisa que você verá quando abrir o projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ela possui campos para coletar o email e a senha de usuários já cadastrados.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Avisa quando o nome tem números, e quando a senha é muito curta.
 
-### `npm test`
+Também há o botão para logar, que fica desativado caso algum dos requisitos acima não sejam cumpridos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Quando o botão "Entrar" é ativado e você já está cadastrado, você será redirecionado pra página principal.
 
-### `npm run build`
+Ela também avisa quando o email digitado não está cadastrado.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+E por último, ela mostra uma opção para ir para a tela de cadastro.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tela de cadastro
 
-### `npm run eject`
+Se for a sua primeira vez usando o Arkos Food, você vai acabar chegando aqui.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Essa tela possui campos para coletar o nome completo, email, senha e confirmação de senha do usuário.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ela avisa sobre o nome conter números, senhas muito curtas ou diferentes entre os dois campos, e também caso o formato de email esteja errado.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+O botão de cadastro também fica desativado caso algum aviso esteja na tela.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Quando o botão "Cadastrar" é ativado, você será redirecionado pra página principal.
 
-## Learn More
+Ela também tem a opção de voltar pra tela de login caso você tenha vindo sem querer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Tela Principal
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Assim que for redirecionado pra cá, você verá um ícone de "carregando" enquanto a página busca as informações necessárias para ser populada.
 
-### Code Splitting
+No topo direito, há o ícone de um carrinho de compras que mostra o número de itens atualmente no carrinho e se clicado redireciona para a página de checkout. Vou explicar ela depois.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Logo ao lado do ícone do carrinho, há uma mensagem cumprimentando o usuário no formato "Olá, Leitor!", e o seu nome caso clique nele vai abrir um menu.
 
-### Analyzing the Bundle Size
+O menu mencionado acima tem duas opções: Editar os seus dados - que é uma outra página que vou explicar depois, e sair - que vai fazer os seus dados serem apagados da sessão atual, mas caso faça login novamente, todos eles vão estar lá.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Há também uma barra de busca, onde você pode buscar os produtos que a API fake products oferece.
 
-### Making a Progressive Web App
+Logo abaixo da barra de busca, ficam os cards dos produtos - oito deles.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Cada card informa o nome do produto, uma foto, avaliações, descrição, e também tem um botão com o preço que permite adicionar ao carrinho.
 
-### Advanced Configuration
+### Tela de edição de dados
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+A tela de edição de perfil tem um header igual ao da página principal, com o carrinho e menu mencionados anteriormente.
 
-### Deployment
+Tem uma barra de navegação que permite voltar à tela principal caso você não queira fazer mudanças nos seus dados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Logo abaixo há três campos: Um com o nome completo do usuário logado - que permite a alteração do nome, outro que apenas mostra o email atual, e outro que permite a troca de email.
 
-### `npm run build` fails to minify
+Todos têm os mesmos requisitos da pagina de login e cadastro para desbloquear o botão de alterar os dados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Por último, há um botão que confirma as alterações dos dados.
+
+### Tela de Checkout
+
+A tela de checkout tem um header igual ao da tela de perfil e tela principal.
+
+Ela também tem uma barra de navegação que permite que o usuário volte à loja para adicionar mais itens ao carrinho.
+
+Cada item adicionado ao carrinho tem um card que mostra a sua foto, nome, avaliação, descrição, preço, e um botão para remover o item do carrinho.
+
+No fim da lista de itens, há um texto com o total da compra, e um botão "Comprar" que limpa o carrinho, e redireciona pra página principal.
