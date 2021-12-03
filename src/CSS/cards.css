@@ -68,12 +68,12 @@
 #checkoutCardContainer {
   width: 1280px;
   height: 179px;
-  left: 80px;
-  top: 208px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
+  margin-left: 80px;
+  margin-bottom: 30px;
 }
 
 #removeItem {
@@ -89,6 +89,7 @@
 #trashCanIMG {
   margin-top: 10px;
   cursor: pointer;
+  margin-left: 90px;
 }
 
 #price {
