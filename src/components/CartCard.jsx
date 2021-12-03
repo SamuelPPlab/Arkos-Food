@@ -23,17 +23,19 @@ const CartCard = ({ item }) => {
       <div style={{ width: '220px', height: '180px' }}>
         <img id="checkoutImage" src={image} alt={title} style={{ height: '179px', width: '222px' }} />
       </div>
-      <div style={{ width: '820px' }}>
-        {title}
+      <div style={{ width: '600px' }}>
+        <h1 id="title">{title}</h1>
         <div>
           <RatingStars rating={rating} />
         </div>
-        {description}
+        <p id="description">{description}</p>
       </div>
-      <div style={{ width: '40px' }}>
-        <img {...trashCanIMGProps} />
+      <div style={{ width: '160px', background: 'gray' }}>
         <div>
-          R$ {price}
+          <img {...trashCanIMGProps} />
+        </div>
+        <div>
+          <span id="price">R$ {price.toFixed(2)}</span>
         </div>
       </div>
     </div>

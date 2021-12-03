@@ -12,6 +12,8 @@
   display: flex;
   max-height: 30px;
   height: 30x;
+  margin-top: -25px;
+  margin-bottom: -15px;
 }
 
 #stars {
@@ -71,7 +73,7 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), -2px -2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #removeItem {
@@ -81,10 +83,47 @@
   background-color: #D94A4A;
   color: white;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 #trashCanIMG {
   margin-top: 10px;
+  cursor: pointer;
+}
+
+#price {
+  width: 84px;
+  height: 29px;
+  left: 1252px;
+  top: 537px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #3655C7;
+}
+
+#title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.007em;
+  color: #1C2025;
+  margin-top: -6px;
+}
+
+#description {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.007em;
+  color: #303030;
 }
 
 .paddingAround {
@@ -95,4 +134,5 @@
 .stars {
   width: 16px;
   height: 16px;
+  margin-bottom: -2px;
 }
