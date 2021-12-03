@@ -3,7 +3,14 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
-import { emailValidator, passwordLengthValidator, passwordMatcher, validateUserName } from "../services/validators";
+import {
+  emailValidator,
+  passwordLengthValidator,
+  passwordMatcher, validateUserName
+} from "../services/validators";
+import NoteBook from "../images/NoteBook.png";
+import ArkosFoodLogo from '../images/ArkosFoodLogo.png';
+import '../CSS/loginPage.css';
 
 
 const SignUp = () => {
@@ -26,11 +33,25 @@ const SignUp = () => {
     setDisableSignUp(true);
   }, [fullName, email, passwordInput, confirmPassword]);
 
+  const inputBoxTextStyle = {
+    width: '51px',
+    height: '27px',
+    fontSize: '18px',
+    lineHeight: '150%',
+    letterSpacing: '0.007em',
+    color: '#1C2025',
+    paddingTop: '30px',
+    paddingLeft: '25px',
+    paddingBottom: '50px'
+  };
+
   const nameProps = {
     id: 'nomeCompleto',
     name: 'Nome Completo',
     fieldValue: fullName,
     setFieldValue: setFullName,
+    style: inputBoxTextStyle,
+    className: 'inputBox',
   };
 
   const emailProps = {
@@ -39,6 +60,8 @@ const SignUp = () => {
     fieldValue: email,
     setFieldValue: setEmail,
     type: "email",
+    style: inputBoxTextStyle,
+    className: 'inputBox',
   };
 
   const passwordInputProps = {
@@ -47,6 +70,8 @@ const SignUp = () => {
     fieldValue: passwordInput,
     setFieldValue: setPasswordInput,
     type: "password",
+    style: inputBoxTextStyle,
+    className: 'inputBox',
   };
 
   const confirmPasswordProps = {
@@ -55,6 +80,8 @@ const SignUp = () => {
     fieldValue: confirmPassword,
     setFieldValue: setConfirmPassword,
     type: "password",
+    style: inputBoxTextStyle,
+    className: 'inputBox',
   };
 
   const signUpButtonProps = {
@@ -62,31 +89,63 @@ const SignUp = () => {
     name: "Cadastrar",
     onClick: () => setGoToMain(true),
     disabled: disableSignUp,
+    className: disableSignUp ? 'submitLoginDisabled' : 'submitLoginEnabled',
   };
 
-  const alreadySingnedUp = <div>
+  const alreadySingnedUp = <pre className="noAccount">
     Já possui um cadastro? <Link to="/">Login</Link>
-  </div>;
+  </pre>;
 
-  const nameWarning = <div>O nome deve conter apenas letras!</div>;
-  const emailWarning = <div>O email deve ter o formato correto.</div>;
-  const passwordLengthWarning = <div>A senha deve ter pelo menos oito caracteres.</div>;
-  const differentPasswordsWarning = <div>As senhas devem ser iguais.</div>;
+  const nameWarning = <div className="warningText warningPadding">
+      O nome deve conter apenas letras!
+    </div>;
+  const emailWarning = <div className="warningText warningPadding">
+      O email deve ter o formato correto.
+    </div>;
+  const passwordLengthWarning = <div className="warningText warningPadding">
+      A senha deve ter pelo menos oito caracteres.
+    </div>;
+  const differentPasswordsWarning = <div className="warningText warningPadding">
+      As senhas devem ser iguais.
+    </div>;
+
+  const fullArkosLogo = <img
+    src={ArkosFoodLogo}
+    style={{ marginTop: '16px', marginLeft: '80px', position: 'absolute' }}
+    alt="ArkosFood Logo"
+  />;
+
+  const noteBookIMG = <img
+    src={NoteBook}
+    alt="Notebook"
+    style={{ marginTop: '330px', marginLeft: '102px' }}
+  />;
 
   if(goToMain) return <Navigate to="/main" />;
 
   return (
-    <div>
-      <Input {...nameProps} />
-      {(!validateUserName(fullName) && fullName !== '') && nameWarning}
-      <Input {...emailProps} />
-      {(!emailValidator(email) && email !== '') && emailWarning}
-      <Input {...passwordInputProps} />
-      {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && passwordLengthWarning}
-      <Input {...confirmPasswordProps} />
-      {!passwordMatcher(passwordInput, confirmPassword) && differentPasswordsWarning}
-      {alreadySingnedUp}
-      <Button {...signUpButtonProps} />
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <div style={{ width: '50%', backgroundColor: '#E0E5F2' }}>
+      {fullArkosLogo}
+      {noteBookIMG}
+      </div>
+      <div style={{ width: '50%', display: 'flex', justifyContent: 'center', paddingTop: '80px' }}>
+        <div id="signupFormContainer">
+          <h1 className="welcomeText">Cadastre-se</h1>
+          <Input {...nameProps} />
+          {(!validateUserName(fullName) && fullName !== '') && nameWarning}
+          <Input {...emailProps} />
+          {(!emailValidator(email) && email !== '') && emailWarning}
+          <Input {...passwordInputProps} />
+          {(!passwordLengthValidator(passwordInput) && passwordInput !== '') && passwordLengthWarning}
+          <Input {...confirmPasswordProps} />
+          {!passwordMatcher(passwordInput, confirmPassword) && differentPasswordsWarning}
+          <div>{alreadySingnedUp}</div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button {...signUpButtonProps} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

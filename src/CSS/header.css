@@ -20,6 +20,22 @@
   cursor: pointer;
 }
 
+#userMenu {
+  display: 'flex';
+  justify-content: space-between;
+  width: 140px;
+  position: absolute;
+  height: 100px;
+  background: #E0E5F2;
+  border: 1px solid #D4D9E6;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(54, 85, 199, 0.05), -2px -2px 4px rgba(54, 85, 199, 0.05);
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 10px;
+}
+
 #ArkosLogo {
   margin-top: 16px;
   margin-left: 80px;
@@ -31,4 +47,21 @@
   flex-direction: 'row';
   margin-right: '0px';
   width: 50px;
+}
+
+.optionContainer {
+  display: flex;
+  height: 50px;
+  margin-top: -5px;
+  padding-top: 10px;
+}
+
+.optionImage {
+  margin-top: -10px;
+}
+
+.optionText {
+  margin-top: -5px;
+  text-decoration: none;
+  color: #1C2025;
 }

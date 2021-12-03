@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import SearchBar from "../components/SearchBar";
 import { fetchAllProducts, fetchMainData } from "../redux/actions/mainPageActions";
+import Loading from "../images/Loading.gif";
 
 const MainPage = ({ stock, loading, items }) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const MainPage = ({ stock, loading, items }) => {
     dispatch(fetchAllProducts());
   }, []);
 
-  if(loading) return <div>loading</div>;
+  if(loading) return <img src={Loading} alt="Loading gif" style={{ paddingTop: '100px' }} />;
 
   return(
     <div>
