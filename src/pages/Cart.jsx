@@ -36,7 +36,7 @@ const Cart = ({ items, products }) => {
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-40px', marginRight: '-240px' }}>
         <pre id="total">TOTAL       <span id="bill"> R$ {total}</span></pre>
       </div>
-      <Link to="/main" style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '560px' }}>
+      <Link to="/main" style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '560px', textDecoration: 'none' }}>
         <Button {...buyButtonProps} />
       </Link>
     </div>
